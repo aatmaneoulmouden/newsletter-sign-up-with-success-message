@@ -33,6 +33,7 @@ main {
   flex-direction: row;
   width: 100%;
   height: 100vh;
+  padding: 0 16px;
 }
 
 .btn {
@@ -67,6 +68,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  flex: 1;
   gap: 58px;
   max-width: 412px;
   padding: 0 24px;
@@ -96,6 +98,10 @@ main {
 .form-wrapper .text-wrapper .intro .feature-item:not(:last-child) {
   margin-bottom: 10px;
 }
+.form-wrapper .text-wrapper .intro .feature-item img {
+  width: 20px;
+  height: 20px;
+}
 .form-wrapper .text-wrapper .form {
   width: 100%;
 }
@@ -118,6 +124,17 @@ main {
 .form-wrapper .text-wrapper .form .input-wrapper input::placeholder {
   color: hsl(231, 7%, 60%);
 }
+.form-wrapper .image-wrapper {
+  flex: 1;
+  align-self: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.form-wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .success-msg-wrapper {
   display: none;
@@ -130,6 +147,18 @@ main {
 }
 .attribution a {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .form-wrapper .text-wrapper {
+    gap: 30px;
+  }
+  .form-wrapper .text-wrapper .intro {
+    gap: 20px;
+  }
+  .form-wrapper .text-wrapper .intro .title {
+    font-size: 46px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
