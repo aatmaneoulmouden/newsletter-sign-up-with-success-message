@@ -67,6 +67,10 @@ main {
                 color: $charcoalGrey;
             }
 
+            p {
+                line-height: 1.6;
+            }
+
             .feature-item {
                 @include displayFlex(flex-start, center);
                 gap: 8px;
@@ -109,4 +113,14 @@ main {
 
 .success-msg-wrapper {
     display: none;
+}
+
+.attribution {
+    color: white;
+    text-align: center;
+    padding: 16px 0;
+
+    a {
+        color: white;
+    }
 }
