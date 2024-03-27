@@ -36,6 +36,12 @@ main {
     font-weight: 700;
     margin-top: 24px;
     cursor: pointer;
+    transition: background .5s linear, box-shadow .3s linear;
+
+    &:hover {
+        background: linear-gradient(90deg, $tomato, $orange);
+        box-shadow: $orange 0px 8px 24px;
+    }
 }
 
 .form-wrapper {
@@ -87,6 +93,10 @@ main {
                     border: 1px solid $grey;
                     border-radius: $brSm;
                     cursor: pointer;
+
+                    &:focus {
+                        border-color: $darkSlateGrey;
+                    }
 
                     &::placeholder {
                         color: $grey;

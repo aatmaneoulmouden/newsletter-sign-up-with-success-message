@@ -44,6 +44,11 @@ main {
   font-weight: 700;
   margin-top: 24px;
   cursor: pointer;
+  transition: background 0.5s linear, box-shadow 0.3s linear;
+}
+.btn:hover {
+  background: linear-gradient(90deg, hsl(4, 100%, 67%), #FF9255);
+  box-shadow: #FF9255 0px 8px 24px;
 }
 
 .form-wrapper {
@@ -103,6 +108,9 @@ main {
   border: 1px solid hsl(231, 7%, 60%);
   border-radius: 6px;
   cursor: pointer;
+}
+.form-wrapper .text-wrapper .form .input-wrapper input:focus {
+  border-color: hsl(234, 29%, 20%);
 }
 .form-wrapper .text-wrapper .form .input-wrapper input::placeholder {
   color: hsl(231, 7%, 60%);
