@@ -1,5 +1,60 @@
+@use "./inc" as *;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $roboto;
+    color: $darkSlateGrey;
+}
+
+body {
+    background-color: $charcoalGrey;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    @include displayFlex(center, center);
+    width: 100%;
+    height: 100vh;
+}
+
+.form-wrapper {
+    @include displayFlex(space-between, center);
+    gap: 20px;
+    background: $white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: $darkSlateGrey 0px 7px 29px 0px;
+
+    .text-wrapper {
+        max-width: 412px;
+        padding: 0 24px;
+
+        .intro {
+            @include displayFlex(center, start, column);
+            gap: 24px;
+            .title {
+                font-size: 54px;
+                font-weight: 700;
+                color: $charcoalGrey;
+            }
+
+            .feature-item {
+                @include displayFlex(start, center);
+                gap: 8px;
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+.success-msg-wrapper {
+    display: none;
 }

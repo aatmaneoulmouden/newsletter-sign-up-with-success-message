@@ -1,0 +1,26 @@
+// Colors
+$darkSlateGrey : hsl(234, 29%, 20%);
+$charcoalGrey : hsl(235, 18%, 26%);
+$grey : hsl(231, 7%, 60%);
+$white : hsl(0, 0%, 100%);
+$tomato : hsl(4, 100%, 67%);
+
+
+// Fonts
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Regular.woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Bold.woff2");
+    font-weight: 700;
+}
+
+$roboto: "Roboto", sans-serif;
+
+
+// Font sizes
+$body: 16px;
