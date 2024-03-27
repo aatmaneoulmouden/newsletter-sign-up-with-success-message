@@ -1,11 +1,14 @@
 @use "./inc" as *;
 
+// Initialization
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: $roboto;
     color: $darkSlateGrey;
+    border: none;
+    outline: none;
 }
 
 body {
@@ -22,6 +25,19 @@ main {
     height: 100vh;
 }
 
+
+// Global Classes
+.btn {
+    width: 100%;
+    background: $darkSlateGrey;
+    border-radius: $brSm;
+    padding: 18px;
+    color: $white;
+    font-weight: 700;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
 .form-wrapper {
     @include displayFlex(space-between, center);
     gap: 20px;
@@ -31,11 +47,13 @@ main {
     box-shadow: $darkSlateGrey 0px 7px 29px 0px;
 
     .text-wrapper {
+        @include displayFlex(center, flex-start, column);
+        gap: 58px;
         max-width: 412px;
         padding: 0 24px;
 
         .intro {
-            @include displayFlex(center, start, column);
+            @include displayFlex(center, flex-start, column);
             gap: 24px;
             .title {
                 font-size: 54px;
@@ -44,11 +62,35 @@ main {
             }
 
             .feature-item {
-                @include displayFlex(start, center);
+                @include displayFlex(flex-start, center);
                 gap: 8px;
 
                 &:not(:last-child) {
                     margin-bottom: 10px;
+                }
+            }
+        }
+
+        .form {
+            width: 100%;
+            .input-wrapper {
+                label {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+                
+                input {
+                    width: 100%;
+                    padding: 18px;
+                    border: 1px solid $grey;
+                    border-radius: $brSm;
+                    cursor: pointer;
+
+                    &::placeholder {
+                        color: $grey;
+                    }
                 }
             }
         }

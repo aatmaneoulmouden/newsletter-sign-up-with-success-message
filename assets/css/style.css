@@ -14,6 +14,8 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   color: hsl(234, 29%, 20%);
+  border: none;
+  outline: none;
 }
 
 body {
@@ -33,6 +35,17 @@ main {
   height: 100vh;
 }
 
+.btn {
+  width: 100%;
+  background: hsl(234, 29%, 20%);
+  border-radius: 6px;
+  padding: 18px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
 .form-wrapper {
   display: flex;
   justify-content: space-between;
@@ -45,13 +58,18 @@ main {
   box-shadow: hsl(234, 29%, 20%) 0px 7px 29px 0px;
 }
 .form-wrapper .text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 58px;
   max-width: 412px;
   padding: 0 24px;
 }
 .form-wrapper .text-wrapper .intro {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 24px;
 }
@@ -62,13 +80,32 @@ main {
 }
 .form-wrapper .text-wrapper .intro .feature-item {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   gap: 8px;
 }
 .form-wrapper .text-wrapper .intro .feature-item:not(:last-child) {
   margin-bottom: 10px;
+}
+.form-wrapper .text-wrapper .form {
+  width: 100%;
+}
+.form-wrapper .text-wrapper .form .input-wrapper label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.form-wrapper .text-wrapper .form .input-wrapper input {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.form-wrapper .text-wrapper .form .input-wrapper input::placeholder {
+  color: hsl(231, 7%, 60%);
 }
 
 .success-msg-wrapper {
