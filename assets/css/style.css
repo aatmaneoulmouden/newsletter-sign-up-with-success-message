@@ -106,11 +106,21 @@ main {
 .form-wrapper .text-wrapper .form {
   width: 100%;
 }
-.form-wrapper .text-wrapper .form .input-wrapper label {
+.form-wrapper .text-wrapper .form .input-wrapper .label-error-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+.form-wrapper .text-wrapper .form .input-wrapper .label-error-wrapper label {
   display: block;
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 8px;
+}
+.form-wrapper .text-wrapper .form .input-wrapper .label-error-wrapper .error-placeholder {
+  font-weight: 700;
+  color: hsl(4, 100%, 67%);
 }
 .form-wrapper .text-wrapper .form .input-wrapper input {
   width: 100%;

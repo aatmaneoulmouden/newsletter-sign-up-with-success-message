@@ -38,12 +38,16 @@
                             </li>
                         </ul>
                     </div>
-                    <form action="" class="form">
+                    <form action="" class="form" id="newsletter-form">
                         <div class="input-wrapper">
-                            <label for="email">Email address</label>
-                            <input type="email" class="input" placeholder="email@company.com" autocomplete="false">
+                            <div class="label-error-wrapper">
+                                <label for="email">Email address</label>
+                                <small class="error-placeholder" id="error-placeholder"></small>
+                            </div>
+                            <input type="text" class="input" id="email" name="email" placeholder="email@company.com"
+                                autocomplete="false">
                         </div>
-                        <button type="submit" class="btn">Subscribe to monthly newsletter</button>
+                        <button type="submit" class="btn" id="submit-button">Subscribe to monthly newsletter</button>
                     </form>
                 </div>
                 <div class="image-wrapper">
@@ -75,6 +79,8 @@
             <a href="https://www.linkedin.com/in/aatmaneoulmouden/" target="_blank">Aatmane Oulmouden</a>.
         </div>
     </footer>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

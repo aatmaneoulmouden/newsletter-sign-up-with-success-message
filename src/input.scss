@@ -94,11 +94,20 @@ main {
             width: 100%;
 
             .input-wrapper {
-                label {
-                    display: block;
-                    font-size: 14px;
-                    font-weight: 700;
+                .label-error-wrapper {
+                    @include displayFlex(space-between, center);
                     margin-bottom: 8px;
+
+                    label {
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+
+                    .error-placeholder {
+                        font-weight: 700;
+                        color: $tomato;
+                    }
                 }
 
                 input {
@@ -189,6 +198,7 @@ main {
 
         .text-wrapper {
             justify-content: flex-start;
+
             .intro {
                 .title {
                     font-size: 38px;
@@ -222,7 +232,7 @@ main {
             color: $darkSlateGrey;
             line-height: 1.6;
 
-            a{
+            a {
                 color: $darkSlateGrey;
             }
         }
