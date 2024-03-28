@@ -57,6 +57,7 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
   background: hsl(0, 0%, 100%);
   padding: 20px;
@@ -135,6 +136,9 @@ main {
   height: 100%;
   object-fit: cover;
 }
+.form-wrapper .image-wrapper img.mobile-illustration {
+  display: none;
+}
 
 .success-msg-wrapper {
   display: none;
@@ -150,6 +154,9 @@ main {
 }
 
 @media (max-width: 768px) {
+  .btn {
+    margin-top: 16px;
+  }
   .form-wrapper .text-wrapper {
     gap: 30px;
   }
@@ -158,6 +165,49 @@ main {
   }
   .form-wrapper .text-wrapper .intro .title {
     font-size: 46px;
+  }
+}
+@media (max-width: 425px) {
+  main {
+    padding: 0;
+    height: auto;
+  }
+  .form-wrapper {
+    height: 100vh;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 20px;
+    box-shadow: none;
+  }
+  .form-wrapper .text-wrapper {
+    justify-content: flex-start;
+  }
+  .form-wrapper .text-wrapper .intro .title {
+    font-size: 38px;
+  }
+  .form-wrapper .image-wrapper {
+    height: 30vh;
+    border-radius: 0;
+    border-end-end-radius: 18px;
+    border-end-start-radius: 18px;
+  }
+  .form-wrapper .image-wrapper img.mobile-illustration {
+    display: block;
+  }
+  .form-wrapper .image-wrapper img.desktop-illustration {
+    display: none;
+  }
+  footer {
+    background: hsl(0, 0%, 100%);
+    padding: 0 20px;
+  }
+  footer .attribution {
+    color: hsl(234, 29%, 20%);
+    line-height: 1.6;
+  }
+  footer .attribution a {
+    color: hsl(234, 29%, 20%);
   }
 }
 

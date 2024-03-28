@@ -47,6 +47,7 @@ main {
 
 .form-wrapper {
     @include displayFlex(space-between, center);
+    flex-wrap: wrap;
     gap: 20px;
     background: $white;
     padding: 20px;
@@ -129,6 +130,10 @@ main {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+            &.mobile-illustration {
+                display: none;
+            }
         }
     }
 }
@@ -149,6 +154,10 @@ main {
 
 // MEDIA QUERIES
 @media (max-width: 768px) {
+    .btn {
+        margin-top: 16px;
+    }
+
     .form-wrapper {
         .text-wrapper {
             gap: 30px;
@@ -159,6 +168,62 @@ main {
                 .title {
                     font-size: 46px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    main {
+        padding: 0;
+        height: auto;
+    }
+
+    .form-wrapper {
+        height: 100vh;
+        flex-direction: column-reverse;
+        border-radius: 0;
+        padding: 0;
+        padding-bottom: 20px;
+        box-shadow: none;
+
+        .text-wrapper {
+            justify-content: flex-start;
+            .intro {
+                .title {
+                    font-size: 38px;
+                }
+            }
+        }
+
+        .image-wrapper {
+            height: 30vh;
+            border-radius: 0;
+            border-end-end-radius: 18px;
+            border-end-start-radius: 18px;
+
+            img {
+                &.mobile-illustration {
+                    display: block;
+                }
+
+                &.desktop-illustration {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    footer {
+        background: $white;
+        padding: 0 20px;
+
+        .attribution {
+            color: $darkSlateGrey;
+            line-height: 1.6;
+
+            a{
+                color: $darkSlateGrey;
             }
         }
     }
