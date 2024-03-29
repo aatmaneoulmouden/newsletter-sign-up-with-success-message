@@ -124,6 +124,12 @@ main {
                     &::placeholder {
                         color: $grey;
                     }
+
+                    &.has-error {
+                        color: $tomato;
+                        border-color: $tomato;
+                        background-color: rgba(255, 98, 87, 0.2);
+                    }
                 }
             }
         }

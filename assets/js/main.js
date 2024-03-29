@@ -1,25 +1,29 @@
-// HTML Elements
-const newsletterForm = document.querySelector('#newsletter-form');
+// Error messages
+let errorMessages = {
+    "emptyField": "The field is left empty",
+    "invalidEmail": "Valid email required",
+};
 
-// Erorr messages
-let emptyField = "The field is left empty";
-let invalidEmail = "The email address is not formatted correctly";
+// DOM elements
+const emailInput = document.querySelector('#email');
+const errorPlaceholder = document.querySelector('#error-placeholder');
 
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Get the email input
-    const emailInput = newsletterForm.querySelector('#email');
-    const errorPlaceholder = newsletterForm.querySelector('#error-placeholder');
-
-    if(emailInput.value.length < 3) {
-        errorPlaceholder.textContent = emptyField;
-        console.log(emptyField);
+// This event listener validates the email input field in real-time, displaying an error message if it's empty.
+emailInput.addEventListener('input', () => {
+    if (emailInput.value.length < 1) {
+        errorPlaceholder.textContent = errorMessages.emptyField;
+        emailInput.classList.add('has-error');
+    } else {
+        errorPlaceholder.textContent = '';
+        emailInput.classList.remove('has-error');
     }
-    
-    // if(isValidEmail(emailInput.value)) {
-    //     errorPlaceholder.textContent = invalidEmail;
-    //     console.log(invalidEmail);
-    // }
 });
 
+// This event listener validates the email input field on focus out, displaying an error message if the input is not a valid email address.
+emailInput.addEventListener('focusout', () => {
+    let emailReg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (emailInput.value.length > 1 && !emailInput.value.match(emailReg)) {
+        errorPlaceholder.textContent = errorMessages.invalidEmail;
+        emailInput.classList.add('has-error');
+    }
+});
