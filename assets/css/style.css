@@ -53,10 +53,7 @@ main {
 }
 
 .form-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  display: none;
   flex-wrap: wrap;
   gap: 20px;
   background: hsl(0, 0%, 100%);
@@ -156,7 +153,23 @@ main {
 }
 
 .success-msg-wrapper {
-  display: none;
+  max-width: 452px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: hsl(0, 0%, 100%);
+  padding: 38px;
+  border-radius: 14px;
+  box-shadow: hsl(234, 29%, 20%) 0px 7px 29px 0px;
+}
+.success-msg-wrapper .title {
+  font-size: 48px;
+}
+.success-msg-wrapper .btn {
+  margin-top: 0;
 }
 
 .attribution {

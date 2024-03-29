@@ -46,7 +46,8 @@ main {
 }
 
 .form-wrapper {
-    @include displayFlex(space-between, center);
+    display: none;
+    // @include displayFlex(space-between, center);
     flex-wrap: wrap;
     gap: 20px;
     background: $white;
@@ -154,7 +155,22 @@ main {
 }
 
 .success-msg-wrapper {
-    display: none;
+    max-width: 452px;
+    @include displayFlex(center, start, column);
+    flex-wrap: wrap;
+    gap: 30px;
+    background: $white;
+    padding: 38px;
+    border-radius: 14px;
+    box-shadow: $darkSlateGrey 0px 7px 29px 0px;
+
+    .title {
+        font-size: 48px;
+    }
+
+    .btn {
+        margin-top: 0;
+    }
 }
 
 .attribution {
