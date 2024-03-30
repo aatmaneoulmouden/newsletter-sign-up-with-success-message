@@ -23,12 +23,16 @@ const toggleShowedClass = (removeFrom, addTo) => {
     addTo.classList.add('showed');
 };
 
+const handleError = (eMsg, eType) => {
+    errorPlaceholder.textContent = eMsg;
+    emailInput.classList.add('has-error');
+    eType = true;
+}
+
 // This event listener validates the email input field in real-time, displaying an error message if it's empty.
 emailInput.addEventListener('input', () => {
     if (emailInput.value.length < 1) {
-        errorPlaceholder.textContent = errorMessages.emptyField;
-        emailInput.classList.add('has-error');
-        emptyFieldError = true;
+        handleError(errorMessages.emptyField, emptyFieldError);
     } else {
         errorPlaceholder.textContent = '';
         emailInput.classList.remove('has-error');
@@ -40,9 +44,7 @@ emailInput.addEventListener('input', () => {
 emailInput.addEventListener('focusout', () => {
     let emailReg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (emailInput.value.length > 1 && !emailInput.value.match(emailReg)) {
-        errorPlaceholder.textContent = errorMessages.invalidEmail;
-        emailInput.classList.add('has-error');
-        invalidEmailError = true;
+        handleError(errorMessages.invalidEmail, invalidEmailError);
     } else {
         invalidEmailError = false;
     }
@@ -51,10 +53,8 @@ emailInput.addEventListener('focusout', () => {
 // This event listener submitted the form when there is no error
 submitFormBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if(emptyFieldError) {
-        errorPlaceholder.textContent = errorMessages.emptyField;
-        emailInput.classList.add('has-error');
-        emptyFieldError = true;
+    if (emptyFieldError) {
+        handleError(errorMessages.emptyField, emptyFieldError);
     }
 
     if (!emptyFieldError && !invalidEmailError) {
