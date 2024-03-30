@@ -61,6 +61,12 @@ main {
   border-radius: 14px;
   box-shadow: hsl(234, 29%, 20%) 0px 7px 29px 0px;
 }
+.form-wrapper.showed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
 .form-wrapper .text-wrapper {
   display: flex;
   justify-content: center;
@@ -153,17 +159,20 @@ main {
 }
 
 .success-msg-wrapper {
+  display: none;
   max-width: 452px;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
   flex-wrap: wrap;
   gap: 30px;
   background: hsl(0, 0%, 100%);
   padding: 38px;
   border-radius: 14px;
   box-shadow: hsl(234, 29%, 20%) 0px 7px 29px 0px;
+}
+.success-msg-wrapper.showed {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
 }
 .success-msg-wrapper .title {
   font-size: 48px;

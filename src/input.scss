@@ -47,13 +47,16 @@ main {
 
 .form-wrapper {
     display: none;
-    // @include displayFlex(space-between, center);
     flex-wrap: wrap;
     gap: 20px;
     background: $white;
     padding: 20px;
     border-radius: 14px;
     box-shadow: $darkSlateGrey 0px 7px 29px 0px;
+
+    &.showed {
+        @include displayFlex(space-between, center);
+    }
 
     .text-wrapper {
         @include displayFlex(center, flex-start, column);
@@ -155,14 +158,18 @@ main {
 }
 
 .success-msg-wrapper {
+    display: none;
     max-width: 452px;
-    @include displayFlex(center, start, column);
     flex-wrap: wrap;
     gap: 30px;
     background: $white;
     padding: 38px;
     border-radius: 14px;
     box-shadow: $darkSlateGrey 0px 7px 29px 0px;
+
+    &.showed {
+        @include displayFlex(center, start, column);
+    }
 
     .title {
         font-size: 48px;
