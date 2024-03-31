@@ -44,7 +44,7 @@
                                 <label for="email">Email address</label>
                                 <small class="error-placeholder" id="error-placeholder"></small>
                             </div>
-                            <input type="text" class="input" id="email" name="email" placeholder="email@company.com"
+                            <input type="email" class="input" id="email" name="email" placeholder="email@company.com"
                                 autocomplete="false">
                         </div>
                         <button type="submit" class="btn" id="submit-button">Subscribe to monthly newsletter</button>
@@ -61,11 +61,14 @@
 
             <!-- Success message start -->
             <section class="success-msg-wrapper" id="message">
-                <img src="./assets/images/icon-success.svg" alt="Newsletter sign-up form with success message"
-                    class="success-icon">
-                <h1 class="title">Thanks for subscribing!</h1>
-                <p class="message">A confirmation email has been sent to <strong id="email-output">ash@loremcompany.com</strong>.
-                    Please open it and click the button inside to confirm your subscription.</p>
+                <div class="message-content">
+                    <img src="./assets/images/icon-success.svg" alt="Newsletter sign-up form with success message"
+                        class="success-icon">
+                    <h1 class="title">Thanks for subscribing!</h1>
+                    <p class="message">A confirmation email has been sent to <strong
+                            id="email-output">ash@loremcompany.com</strong>.
+                        Please open it and click the button inside to confirm your subscription.</p>
+                </div>
                 <button class="btn" id="dismiss-msg-btn">Dismiss message</button>
             </section>
             <!-- Success message end -->

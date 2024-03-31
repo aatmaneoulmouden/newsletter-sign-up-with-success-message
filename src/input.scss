@@ -171,8 +171,16 @@ main {
         @include displayFlex(center, start, column);
     }
 
-    .title {
-        font-size: 48px;
+    .message-content {
+        @include displayFlex(center, start, column);
+        gap: 24px;
+        .title {
+            font-size: 48px;
+        }
+
+        .message {
+            line-height: 1.6;
+        }
     }
 
     .btn {
@@ -211,21 +219,27 @@ main {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 460px) {
     main {
+        // display: initial;
         padding: 0;
         height: auto;
     }
 
     .form-wrapper {
-        height: 100vh;
-        flex-direction: column-reverse;
+        min-height: 100vh;
+        height: auto;
         border-radius: 0;
         padding: 0;
         padding-bottom: 20px;
         box-shadow: none;
 
+        &.showed {
+            flex-direction: column-reverse;
+        }
+
         .text-wrapper {
+            max-width: 100%;
             justify-content: flex-start;
 
             .intro {
@@ -236,7 +250,7 @@ main {
         }
 
         .image-wrapper {
-            height: 30vh;
+            height: 230px;
             border-radius: 0;
             border-end-end-radius: 18px;
             border-end-start-radius: 18px;
@@ -249,6 +263,25 @@ main {
                 &.desktop-illustration {
                     display: none;
                 }
+            }
+        }
+    }
+
+
+    .success-msg-wrapper {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 28px;
+        box-shadow: none;
+
+        &.showed {
+            @include displayFlex(space-between, start, column);
+        }
+
+        .message-content {
+            .title {
+                font-size: 42px;
             }
         }
     }
